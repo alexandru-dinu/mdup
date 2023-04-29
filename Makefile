@@ -3,7 +3,7 @@ SRC := $(shell find {mdup,tests} -name "*.py")
 
 .PHONY: test
 test:
-	@poetry run pytest -s -vv --exitfirst --hypothesis-show-statistics
+	@./tests/test.sh
 
 .PHONY: typecheck
 typecheck:

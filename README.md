@@ -1,5 +1,7 @@
 # `mdup`
 
+[![Build](https://github.com/alexandru-dinu/mdup/actions/workflows/main.yml/badge.svg)](https://github.com/alexandru-dinu/mdup/actions/workflows/main.yml)
+
 Keep markdown files up-to-date.
 
 Inspired by [DavidWells/markdown-magic](https://github.com/DavidWells/markdown-magic).
