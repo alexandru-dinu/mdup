@@ -18,12 +18,8 @@ class ParseError(Exception):
     pass
 
 
-class BlockError(Exception):
-    pass
-
-
 class Transform:
-    kinds = {"INCLUDE", "RUN"}
+    kinds = {"SRC", "RUN"}
     pattern_beg = f"^(<!-- MDUP:BEG \\(({'|'.join(kinds)}):(.+)\\) -->)$"
     pattern_end = "^(<!-- MDUP:END -->)$"
 
@@ -54,10 +50,6 @@ class Transform:
             elif m := re.match(self.pattern_end, line):
                 if not cur_loc:
                     raise ParseError(f"Found END without BEG on line {i+1}")
-                if i - cur_loc.beg != 1:
-                    raise BlockError(
-                        f"Only empty blocks are currently supported (between lines {cur_loc.beg+1} and {i+1})"
-                    )
                 cur_loc.end = i
                 out.append(copy(cur_loc))  # TODO: avoid copy?
                 cur_loc = None
@@ -65,12 +57,10 @@ class Transform:
         return out
 
     def transform(self) -> "Transform":
-        # NOTE: currently only supports empty blocks so `end == beg + 1`
         locs = self._parse_pattern_locs()
 
         # iterate in reverse order so that we don't have to worry about line numbers
         for loc in reversed(locs):
-            assert loc.end == loc.beg + 1
             res = Transform.kind_to_func(loc.kind)(loc.path)
             self._lines[loc.beg + 1 : loc.end] = res
 
@@ -109,7 +99,7 @@ class Transform:
 
     @staticmethod
     def kind_to_func(kind: str):
-        if kind == "INCLUDE":
+        if kind == "SRC":
             return Transform.include_src
         if kind == "RUN":
             return Transform.run_src

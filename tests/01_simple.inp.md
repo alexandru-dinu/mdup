@@ -1,7 +1,7 @@
 # Hello, world
 
 Let's include the python script:
-<!-- MDUP:BEG (INCLUDE:./01.py) -->
+<!-- MDUP:BEG (SRC:./01.py) -->
 <!-- MDUP:END -->
 
 Now let's run it:
@@ -11,7 +11,8 @@ Now let's run it:
 ---
 
 Now let's include the bash script:
-<!-- MDUP:BEG (INCLUDE:./02.sh) -->
+<!-- MDUP:BEG (SRC:./02.sh) -->
+Any text inside the block will be overwritten by the script contents.
 <!-- MDUP:END -->
 
 And run it:

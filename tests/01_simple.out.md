@@ -1,7 +1,7 @@
 # Hello, world
 
 Let's include the python script:
-<!-- MDUP:BEG (INCLUDE:./01.py) -->
+<!-- MDUP:BEG (SRC:./01.py) -->
 ```py
 #!/usr/bin/env python3
 import sys
@@ -22,7 +22,7 @@ sys.version_info(major=3, minor=10, micro=10, releaselevel='final', serial=0)
 ---
 
 Now let's include the bash script:
-<!-- MDUP:BEG (INCLUDE:./02.sh) -->
+<!-- MDUP:BEG (SRC:./02.sh) -->
 ```sh
 #!/usr/bin/env bash
 
