@@ -3,7 +3,7 @@ SRC := $(shell find ./mdup -name "*.py")
 
 .PHONY: test
 test:
-	@./tests/test.sh
+	@./scripts/test.sh
 
 .PHONY: typecheck
 typecheck:

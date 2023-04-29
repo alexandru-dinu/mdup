@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 EXEC="poetry run mdup"
-HERE=$(dirname $0)
-TEST_DIRS=$(find $HERE -mindepth 1 -type d | sort -n)
+TEST_DIRS=$(find tests/ -mindepth 1 -type d | sort -n)
 
 sc="0"
 

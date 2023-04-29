@@ -44,7 +44,7 @@ class Transform:
                     beg=i,
                     end=None,
                     kind=m.group(2),
-                    path=self.input_file.parent / m.group(3),
+                    path=(self.input_file.parent / m.group(3)).resolve(),
                 )
 
             elif m := re.match(self.pattern_end, line):
@@ -85,7 +85,7 @@ class Transform:
     @staticmethod
     def run_src(path: Path) -> list[str]:
         proc = subprocess.run(
-            ["bash", "-c", f'"{path.resolve()}"'],
+            ["bash", "-c", f'"{path}"'],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             check=True,
