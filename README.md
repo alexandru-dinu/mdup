@@ -1,6 +1,7 @@
 # `mdup`
 
 [![Build](https://github.com/alexandru-dinu/mdup/actions/workflows/main.yml/badge.svg)](https://github.com/alexandru-dinu/mdup/actions/workflows/main.yml)
+[![PyPI version](https://badge.fury.io/py/mdup.svg)](https://pypi.org/project/mdup/)
 
 Keep markdown files up-to-date by injecting code or script output between special blocks.
 
