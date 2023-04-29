@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mdup"
-version = "0.2.1"
+version = "0.2.3"
 homepage = "https://github.com/alexandru-dinu/mdup"
 description = "Keep markdown files up-to-date."
 authors = ["Alexandru Dinu <alex.dinu07@gmail.com>"]

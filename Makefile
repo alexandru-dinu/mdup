@@ -23,6 +23,11 @@ format:
 list-todo:
 	@grep --color=auto -Hn -E '^(.*)TODO:(.*)$$' $(SRC)
 
+.PHONY: check-version
+check-version:
+	@grep __version__ mdup/__init__.py
+	@grep version pyproject.toml
+
 .PHONY: publish
 publish: .env
 	source $< && poetry publish --build

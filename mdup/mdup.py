@@ -136,13 +136,20 @@ def main():
 
 
 def parse_args() -> Namespace:
+    from mdup import __version__
+
     parser = ArgumentParser()
-    parser.add_argument("-i", "--input", type=Path, required=True, help="Input file.")
+    parser.add_argument(
+        "-i", "--input", type=Path, required=True, help="input markdown file"
+    )
     parser.add_argument(
         "-o",
         "--output",
         type=Path,
-        help="Output file. If not specified, it will edit in place.",
+        help="output markdown file; if not specified, the input file will be edited in place",
+    )
+    parser.add_argument(
+        "-v", "--version", action="version", version=f"%(prog)s {__version__}"
     )
 
     return parser.parse_args()
