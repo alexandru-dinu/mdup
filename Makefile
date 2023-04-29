@@ -1,5 +1,5 @@
 SHELL := /usr/bin/bash
-SRC := $(shell find {mdup,tests} -name "*.py")
+SRC := $(shell find ./mdup -name "*.py")
 
 .PHONY: test
 test:
@@ -11,7 +11,7 @@ typecheck:
 
 .PHONY: lint
 lint:
-	@poetry run ruff check $(SRC)
+	@poetry run ruff check mdup/
 
 .PHONY: format
 format:
@@ -22,6 +22,10 @@ format:
 .PHONY: list-todo
 list-todo:
 	@grep --color=auto -Hn -E '^(.*)TODO:(.*)$$' $(SRC)
+
+.PHONY: publish
+publish: .env
+	source $< && poetry publish --build
 
 .PHONY: clean
 clean:
