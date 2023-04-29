@@ -31,14 +31,14 @@ where `{KIND}` can be either:
 
 For examples, see [tests](./tests/).
 
-<h2 color=red>Disclaimer</h2>
+## ⚠️ Disclaimer
 
-Beware of running `mdup` on potentially malicious markdown files, e.g.:
+I created this tool primarily to meet my own needs -- it's very simple and ad-hoc. While I don't anticipate it gaining too much adoption, always beware when running `mdup` on markdown files of unknown origin (which can be malicious), e.g.:
 
     <!-- MDUP:BEG (CMD:rm -rf /) -->
     <!-- MDUP:END -->
 
-This tool should be used for simple tasks, e.g. keeping documentation up-to-date.
+This tool should only be used for **simple** tasks, e.g. keeping **simple** documentation up-to-date.
 
 ## Usage
 <!-- MDUP:BEG (CMD:poetry run mdup --help) -->
