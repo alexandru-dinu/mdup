@@ -67,7 +67,7 @@ The blocks must be defined as the sole contents of the line, i.e. matching `^` a
 For examples, see [tests](./tests/).
 
 One _real-world_ use case is my [Advent of Code](https://adventofcode.com/)
-[README.md](https://raw.githubusercontent.com/alexandru-dinu/advent-of-code/main/README.md),
+[README.md](https://github.com/alexandru-dinu/programming-challenges/blob/main/advent-of-code/README.md),
 in which I use `mdup` to automatically update year progress badges.
 
 ## ⚠️ Disclaimer
