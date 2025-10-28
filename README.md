@@ -19,13 +19,11 @@ pip install mdup
 usage: mdup [-h] -i INPUT [-o OUTPUT] [-v]
 
 options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-                        input markdown file
-  -o OUTPUT, --output OUTPUT
-                        output markdown file; if not specified, the input file
-                        will be edited in place
-  -v, --version         show program's version number and exit
+  -h, --help           show this help message and exit
+  -i, --input INPUT    input markdown file
+  -o, --output OUTPUT  output markdown file; if not specified, the input file
+                       will be edited in place
+  -v, --version        show program's version number and exit
 ```
 <!-- MDUP:END -->
 
