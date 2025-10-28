@@ -8,9 +8,12 @@
 `mdup` does not depend on anything apart from Python stdlib.
 
 ## Install
-
 ```
 pip install mdup
+```
+or easier usage via `uv`:
+```
+uv tool run mdup
 ```
 
 ## Usage
