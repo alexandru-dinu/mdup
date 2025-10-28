@@ -1,4 +1,3 @@
-SHELL := /usr/bin/bash
 SRC := $(shell find ./mdup -name "*.py")
 
 .PHONY: test
@@ -7,36 +6,18 @@ test:
 
 .PHONY: typecheck
 typecheck:
-	@poetry run mypy mdup/
+	@uv tool run mypy mdup/
 
 .PHONY: lint
 lint:
-	@poetry run ruff check mdup/
+	@uv run ruff check mdup/
 
 .PHONY: format
 format:
-	@poetry run autoflake --remove-all-unused-imports -i $(SRC)
-	@poetry run isort $(SRC)
-	@poetry run black $(SRC)
+	@uv tool run autoflake --in-place --remove-all-unused-imports $(SRC) \
+		&& uv tool run isort $(SRC) \
+		&& uv tool run black --line-length 120 $(SRC)
 
 .PHONY: list-todo
 list-todo:
-	@grep --color=auto -Hn -E '^(.*)TODO:(.*)$$' $(SRC)
-
-.PHONY: check-version
-check-version:
-	@grep __version__ mdup/__init__.py
-	@grep version pyproject.toml
-
-.PHONY: publish
-publish: .env
-	source $< && poetry publish --build
-
-.PHONY: clean
-clean:
-	rm -rf **/__pycache__
-	rm -rf **/.ipynb_checkpoints
-	rm -rf .mypy_cache
-	rm -rf .hypothesis
-	rm -rf .pytest_cache
-	rm -rf .ruff_cache
+	@rg -w "TODO" $(SRC)

@@ -120,11 +120,7 @@ class Transform:
         stdout = proc.stdout.decode("utf-8")
         if proc.returncode != 0:
             stderr = proc.stderr.decode("utf-8")
-            raise RunCmdError(
-                f"Error running `{cmd}`:\n"
-                f"stdout:\n{stdout}\n"
-                f"stderr:\n{stderr}\n"
-            )
+            raise RunCmdError(f"Error running `{cmd}`:\n" f"stdout:\n{stdout}\n" f"stderr:\n{stderr}\n")
         return Transform._fmt_code_block(stdout.splitlines(keepends=True), pre="")
 
 
@@ -139,18 +135,14 @@ def parse_args() -> Namespace:
     from mdup import __version__
 
     parser = ArgumentParser()
-    parser.add_argument(
-        "-i", "--input", type=Path, required=True, help="input markdown file"
-    )
+    parser.add_argument("-i", "--input", type=Path, required=True, help="input markdown file")
     parser.add_argument(
         "-o",
         "--output",
         type=Path,
         help="output markdown file; if not specified, the input file will be edited in place",
     )
-    parser.add_argument(
-        "-v", "--version", action="version", version=f"%(prog)s {__version__}"
-    )
+    parser.add_argument("-v", "--version", action="version", version=f"%(prog)s {__version__}")
 
     return parser.parse_args()
 

@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-EXEC="poetry run mdup"
 TEST_DIRS=$(find tests/ -mindepth 1 -type d | sort -n)
 
 sc="0"
 
 for td in $TEST_DIRS; do
-    $EXEC -i $td/inp.md -o /dev/stdout | diff - $td/out.md 2>&1 > /dev/null
+    uv run mdup -i $td/inp.md -o /dev/stdout | diff - $td/out.md 2>&1 > /dev/null
     if [ $? -eq 0 ]; then
         echo "$td: PASS";
     else

@@ -1,42 +1,31 @@
-[tool.poetry]
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
 name = "mdup"
-version = "0.2.3"
-homepage = "https://github.com/alexandru-dinu/mdup"
 description = "Keep markdown files up-to-date."
-authors = ["Alexandru Dinu <alex.dinu07@gmail.com>"]
-license = "MIT"
 readme = "README.md"
-packages = [{include = "mdup"}]
+authors = [ {name = "Alexandru Dinu"} ]
+dependencies = []
+requires-python = ">=3.8"
+dynamic = ["version"]
 
-[tool.poetry.dependencies]
-python = ">=3.8"
+[tool.setuptools.dynamic]
+version = {attr = "mdup.__version__"}
 
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.0.263"
-autoflake = "^2.1.1"
-isort = "^5.12.0"
-black = "^23.3.0"
-mypy = "^1.2.0"
-
-[tool.poetry.scripts]
+[project.scripts]
 mdup = "mdup.mdup:main"
 
-[tool.ruff]
+[tool.ruff.lint]
 select = [
-    "E", # pycodestyle errors
-    "W", # pycodestyle warnings
-    "F", # pyflakes
-    "C4", # flake8-comprehensions
-    "B", # flake8-bugbear
-    "SIM", # flake8-simplify
+    "E",
+    "W",
+    "F",
+    "C4",
+    "B",
+    "SIM"
 ]
 ignore = [
-    "E501",  # line too long, handled by black
+    "E501"
 ]
-
-[tool.isort]
-profile = "black"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
