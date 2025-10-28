@@ -120,7 +120,7 @@ class Transform:
         stdout = proc.stdout.decode("utf-8")
         if proc.returncode != 0:
             stderr = proc.stderr.decode("utf-8")
-            raise RunCmdError(f"Error running `{cmd}`:\n" f"stdout:\n{stdout}\n" f"stderr:\n{stderr}\n")
+            raise RunCmdError(f"Error running `{cmd}`:\nstdout:\n{stdout}\nstderr:\n{stderr}\n")
         return Transform._fmt_code_block(stdout.splitlines(keepends=True), pre="")
 
 
