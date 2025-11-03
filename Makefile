@@ -1,16 +1,16 @@
-SRC := $(shell find ./mdup -name "*.py")
+SRC := mdup.py
 
 .PHONY: test
 test:
-	@./scripts/test.sh
+	@./test.sh
 
 .PHONY: typecheck
 typecheck:
-	@uv tool run mypy mdup/
+	@uv tool run mypy $(SRC)
 
 .PHONY: lint
 lint:
-	@uv run ruff check mdup/
+	@uv run ruff check $(SRC)
 
 .PHONY: format
 format:

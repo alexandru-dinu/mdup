@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+__version__ = "0.2.5"
+
 import re
 import subprocess
 from argparse import ArgumentParser, Namespace
@@ -132,8 +134,6 @@ def main():
 
 
 def parse_args() -> Namespace:
-    from mdup import __version__
-
     parser = ArgumentParser()
     parser.add_argument("-i", "--input", type=Path, required=True, help="input markdown file")
     parser.add_argument(

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 TEST_DIRS=$(find tests/ -mindepth 1 -type d | sort -n)
 
 sc="0"

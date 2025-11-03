@@ -15,7 +15,7 @@ dynamic = ["version"]
 version = {attr = "mdup.__version__"}
 
 [project.scripts]
-mdup = "mdup.mdup:main"
+mdup = "mdup:main"
 
 [tool.ruff.lint]
 select = [
