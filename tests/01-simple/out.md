@@ -1,7 +1,7 @@
 # Hello, world
 
 Let's include the python script:
-<!-- MDUP:BEG (SRC:./foo.py) -->
+<!-- MDUP:BEG cat ./foo.py ; py -->
 ```py
 #!/usr/bin/env python3
 
@@ -11,7 +11,7 @@ import this
 <!-- MDUP:END -->
 
 Now let's run it:
-<!-- MDUP:BEG (RUN:./foo.py) -->
+<!-- MDUP:BEG ./foo.py -->
 ```
 Hello from python
 The Zen of Python, by Tim Peters
@@ -41,7 +41,7 @@ Namespaces are one honking great idea -- let's do more of those!
 ---
 
 Now let's include the bash script:
-<!-- MDUP:BEG (SRC:./bar.sh) -->
+<!-- MDUP:BEG cat ./bar.sh ; sh -->
 ```sh
 #!/usr/bin/env bash
 
@@ -50,7 +50,7 @@ type cd
 <!-- MDUP:END -->
 
 And run it:
-<!-- MDUP:BEG (RUN:./bar.sh) -->
+<!-- MDUP:BEG ./bar.sh -->
 ```
 cd is a shell builtin
 ```

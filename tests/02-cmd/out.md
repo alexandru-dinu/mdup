@@ -1,5 +1,5 @@
 Here we'll execute the command:
-<!-- MDUP:BEG (CMD:file /etc/passwd) -->
+<!-- MDUP:BEG file /etc/passwd -->
 ```
 /etc/passwd: ASCII text
 ```
